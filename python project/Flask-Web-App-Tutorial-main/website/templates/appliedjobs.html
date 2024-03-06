@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}Applied Jobs{% endblock %}
+
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="alumnihome" href="/alumnihome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="searchjob" href="/searchjob">Search Job</a>
+            <a class="nav-item nav-link" id="appliedjobs" href="/appliedjobs">Applied Jobs</a>
+             <a class="nav-item nav-link" id="viewprofile" href="/viewprofile">View Profile</a>
+        </div>
+      </div>
+ </nav>
+{% endblock %}
+
+{% block content %}
+
+<h1>Applied Jobs</h1>
+{% if not jobs_available %}
+<p style="font-weight:bold;"> You have not applied for any jobs</p>
+{% else %}
+    <table border="1"  style="border-collapse: collapse;
+            width: 100%;">
+        <tr>
+            <th style="padding-right:30px;text-align:center;">Sl no</th>
+            <th style="padding-right:150px;text-align:center;">Job Title</th>
+            <th style="padding-right:50px;text-align:center;">Qualification Required</th>
+            <th style="padding-right:50px;text-align:center;">Additional Requirements</th>
+            <th style="padding-right:50px;text-align:center;">Company Name</th>
+        </tr>
+        {% for job in jobs_available %}
+        <tr>
+            <td style="text-align:center">{{ job.sl_no }}</td>
+            <td style="text-align:center">{{ job.job_title }}</td>
+            <td style="text-align:center">{{ job.qualification_required }}</td>
+            <td style="text-align:center">{{ job.additional_requirments }}</td>
+            <td style="text-align:center">{{ job.company_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}
+

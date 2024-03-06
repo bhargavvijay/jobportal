@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Search Job{% endblock %}
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="alumnihome" href="/alumnihome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="searchjob" href="/searchjob">Search Job</a>
+            <a class="nav-item nav-link" id="appliedjobs" href="/appliedjobs">Applied Jobs</a>
+             <a class="nav-item nav-link" id="viewprofile" href="/viewprofile">View Profile</a>
+        </div>
+      </div>
+ </nav>
+{% endblock %}
+{% block content %}
+<h1 align="center">Search Job</h1>
+</br>
+
+<form method="POST">
+  <div class="form-group">
+    <label for="search_according_qualification">Search based on qualification</label><br>
+    <select name="search_according_qualification">
+      <option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering (B.E.)</option>
+      <option value="Master of Engineering (M.E.)">Master of Engineering (M.E.)</option>
+      <option value="Bachelor of Architecture (B.Arch.)">Bachelor of Architecture (B.Arch.)</option>
+      <option value="Bachelor of Pharmacy (B.Pharm.)">Bachelor of Pharmacy (B.Pharm.)</option>
+    </select>
+  </div>
+    <button type="submit">Search Job</button>
+    </form>
+{% endblock %}

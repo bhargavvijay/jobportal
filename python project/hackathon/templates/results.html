@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif; /* Set your desired font-family */
+            text-align: center; /* Center-align text within the body */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid white;
+            text-align: center;
+        }
+
+        h1, h3 {
+            text-align: center; /* Center-align the headings */
+        }
+    </style>
+</head>
+<body>
+    <h1>Accuracy Result</h1>
+    <h3>Epsilon = {{ epsilon }}</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>Before</th>
+            <th>After</th>
+        </tr>
+        <tr>
+            <td>Random Forest Accuracy </td>
+            <td>{{ dict1['acc_rf1'] }}</td>
+            <td>{{ dict1['acc_rf2'] }}</td>
+        </tr>
+        <tr>
+            <td>Decision Tree Accuracy </td>
+            <td>{{ dict1['acc_dt1'] }}</td>
+            <td>{{ dict1['acc_dt2'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>

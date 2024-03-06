@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}Jobs List{% endblock %}
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="companyhome" href="/companyhome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="addjob" href="/addjob">Add Job</a>
+            <a class="nav-item nav-link" id="jobapplications" href="/jobapplications">Job Applications</a>
+            <a class="nav-item nav-link" id="viewjobs" href="/viewjobs">View Jobs</a>
+        </div>
+      </div>
+ </nav>
+{% endblock %}
+
+{% block content %}
+
+<h1>Jobs List</h1>
+{% if not all_jobs %}
+<p style="font-weight:bold;"> No jobs are available</p>
+{% else %}
+    <table border="1"  style="border-collapse: collapse;
+            width: 100%;">
+        <tr>
+            <th style="padding-right:30px;text-align:center;">Sl no</th>
+            <th style="padding-right:150px;text-align:center;">Job Title</th>
+            <th style="padding-right:50px;text-align:center;">Qualification Required</th>
+            <th style="padding-right:50px;text-align:center;">Additional Requirements</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+        {% for job in all_jobs %}
+        <tr>
+            <td style="text-align:center">{{ loop.index }}</td>
+            <td style="text-align:center">{{ job.title }}</td>
+            <td style="text-align:center">{{ job.qualifications_required }}</td>
+            <td style="text-align:center">{{ job.additional_requirements }}</td>
+            <td>
+            <form method="GET" action="/updatejob/{{ job.id }}" style="display:inline-block;">
+            <button type="submit"  style="background-color: green; color: white;">Update</button>
+            </form>
+            <form method="POST" action="/deletejob/{{ job.id }}" style="display:inline-block;">
+            <button type="submit" style="background-color: red; color: white;">Remove</button>
+            </form>
+            <td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}
+

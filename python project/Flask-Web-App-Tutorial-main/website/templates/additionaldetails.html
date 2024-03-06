@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Additional details{% endblock %}
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="alumnihome" href="/alumnihome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+{% endblock %}
+{% block
+content %}
+<form method="POST">
+  <h3 align="center">Additional details</h3>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input
+      type="text"
+      class="form-control"
+      id="age"
+      name="age"
+      placeholder="Enter age"
+    />
+  </div>
+    <div class="form-group">
+    <label for="contactno">Contact number</label>
+    <input
+      type="text"
+      class="form-control"
+      id="contactno"
+      name="contactno"
+      placeholder="Enter contact number"
+    />
+  </div>
+     <div class="form-group">
+    <label for="year_of_graduation">year_of_graduation</label>
+    <input
+      type="text"
+      class="form-control"
+      id="year_of_graduation"
+      name="year_of_graduation"
+      placeholder="Enter year of graduation"
+    />
+  </div>
+     <div class="form-group">
+    <label for="department">Department</label>
+    <input
+      type="text"
+      class="form-control"
+      id="department"
+      name="department"
+      placeholder="Enter department name"
+    />
+  </div>
+     <div class="form-group">
+    <label for="usn">USN</label>
+    <input
+      type="text"
+      class="form-control"
+      id="USN"
+      name="USN"
+      placeholder="Enter USN"
+    />
+  </div>
+     <div class="form-group">
+    <label for="resume_link">Resume</label>
+    <input
+      type="text"
+      class="form-control"
+      id="resume_link"
+      name="resume_link"
+      placeholder="Enter resume link"
+    />
+
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
+

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        width: 100vw;
+        height: 150px;
+        text-align: center;
+        background-color: rgb(255, 241, 241);
+    }
+
+    .logins {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 80vh;
+        background-color: white;
+    }
+
+    .login-box {
+        width: 49vw;
+        height: 79vh;
+        border: 2px solid black;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        margin: 20px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    img {
+        width: 200px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+
+    button a {
+        text-decoration: none;
+        font-style: italic;
+        font-size: large;
+        color: black;
+    }
+
+    button:hover {
+        background-color: green;
+        color: white;
+    }
+    a:focus,
+button:focus {
+    outline: none;
+}
+div:focus {
+    outline: none;
+}
+</style>
+     <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+</head>
+<body>
+    <div class="logins">
+        <div class="login-box">
+            <h2>Alumni Login</h2>
+            <img src="{{ url_for('static', filename='images/R.jpg') }}" alt="Employee-Image">
+            <div class="button-container">
+                <a href='/alumnilogin' class="btn btn-primary">Login Up</a>
+                <a href='/alumnisign-up' class="btn btn-primary">Sign UP</a>
+
+            </div>
+        </div>
+        <div class="login-box">
+            <h2>Company Login</h2>
+            <img src="{{ url_for('static', filename='images/b.png') }}" alt="Employer-Image">
+            <div class="button-container">
+                 <a href='/companylogin' class="btn btn-primary">Login Up</a>
+                <a href="/companysign-up" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

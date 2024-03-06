@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}Update Profile{% endblock %}
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="alumnihome" href="/alumnihome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="searchjob" href="/searchjob">Search Job</a>
+            <a class="nav-item nav-link" id="appliedjobs" href="/appliedjobs">Applied Jobs</a>
+            <a class="nav-item nav-link" id="viewprofile" href="/viewprofile">View Profile</a>
+
+        </div>
+      </div>
+ </nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Update Profile</h1>
+
+    <form method="POST" action="">
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="full_name"
+                   name="full_name"
+                   value="{{ user.first_name }}" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" name="age" value="{{ user.age }}" required>
+        </div>
+        <div class="form-group">
+            <label for="contactno">Contact Number</label>
+            <input type="text" class="form-control" id="contactno" name="contactno" value="{{ user.contactno }}" required>
+        </div>
+        <div class="form-group">
+            <label for="year_of_graduation">Year of Graduation</label>
+            <input type="text" class="form-control" id="year_of_graduation" name="year_of_graduation" value="{{ user.year_of_graduation }}" required>
+        </div>
+        <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" class="form-control" id="department" name="department" value="{{ user.department }}" required>
+        </div>
+        <div class="form-group">
+            <label for="USN">USN</label>
+            <input type="text" class="form-control" id="USN" name="USN" value="{{ user.USN }}" required>
+        </div>
+        <div class="form-group">
+            <label for="resume_link">Resume Link</label>
+            <input type="text" class="form-control" id="resume_link" name="resume_link" value="{{ user.resume_link }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+</div>
+{% endblock %}

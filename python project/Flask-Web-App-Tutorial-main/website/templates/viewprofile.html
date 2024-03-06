@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}View Profile{% endblock %}
+
+{% block show_navbar %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="alumnihome" href="/alumnihome">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="searchjob" href="/searchjob">Search Job</a>
+            <a class="nav-item nav-link" id="appliedjobs" href="/appliedjobs">Applied Jobs</a>
+            <a class="nav-item nav-link" id="viewprofile" href="/viewprofile">View Profile</a>
+
+        </div>
+      </div>
+ </nav>
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Profile</h1></br>
+
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>First Name:</strong> {{ user.first_name }}</p>
+<p><strong>Age:</strong> {{ user.age }}</p>
+<p><strong>Contact Number:</strong> {{ user.contactno }}</p>
+<p><strong>Year of Graduation:</strong> {{ user.year_of_graduation }}</p>
+<p><strong>Department:</strong> {{ user.department }}</p>
+<p><strong>USN:</strong> {{ user.USN }}</p>
+<p><strong>Resume Link:</strong> {{ user.resume_link }}</p>
+<a href="{{ url_for('views.updateprofile') }}" class="btn btn-primary">Update Profile</a>
+<a href="{{ url_for('views.resetpassword1') }}" class="btn btn-primary">Reset Password</a>
+
+{% endblock %}
+
